@@ -1,0 +1,16 @@
+{%  extends "layout.html" %}
+
+{% block title %}
+    Students
+{%  endblock %}
+
+{% block content %}
+    {% load static %}
+    <div class="bg-image" style="background-image: url({% static 'images/background_image.jpg' %}); height: 100vh; background-size: cover; background-position: center center;">
+        <div class="text-center h-75 d-flex flex-column justify-content-center align-items-center text-white landing-text">
+            <h1 class="mb-3">CareerConnect</h1>
+            <p class="lead">For students</p>
+            <a href="{% url 'students:view_jobs' %}" class="btn btn-lg btn-primary">Find your next job</a>
+        </div>
+    </div>
+{% endblock %}

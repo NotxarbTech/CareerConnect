@@ -1,0 +1,32 @@
+{%  extends "layout.html" %}
+
+{% block title %}
+    Create a job posting
+{%  endblock %}
+
+{% block content %}
+    <div class="d-flex justify-content-center align-items-center my-5">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <div class="col-12 col-md-8 col-lg-6">
+                    <form class="card p-4 shadow-lg" method="post" novalidate>
+                        {% csrf_token %}
+                        <h2 class="text-center mb-4">Create a New Job Posting</h2>
+                        
+                        {% for field in form %}
+                            <div class="mb-4">
+                                {{ field.label_tag }}
+                                {{ field }}
+                                {% if field.errors %}
+                                    <small class="text-danger">{{ field.errors | striptags }}</small>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        
+                        <input type="submit" value="Create Posting" class="btn btn-primary w-100">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

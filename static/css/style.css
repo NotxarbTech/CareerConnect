@@ -1,0 +1,31 @@
+:root {
+    --bg-color: #E8F9FF;
+    --second-color: #C4D9FF;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: var(--second-color);
+}
+
+#search-icon {
+    width: 50px;
+    height: auto;
+}
+
+#search-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+body .index-page {
+    overflow: hidden;
+}

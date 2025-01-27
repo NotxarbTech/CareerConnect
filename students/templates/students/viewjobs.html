@@ -1,0 +1,33 @@
+{%  extends "layout.html" %}
+
+{% block title %}
+    View Job Postings
+{%  endblock %}
+
+{% block content %}
+    <div class="container my-5">
+        <h1 class="text-center mb-4">Job Postings</h1>
+
+        <div class="row justify-content-center">
+            {% for posting in job_postings %}
+            <!-- Job Card-->
+             <div class="col-mb-4 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-body d-flex flex-column">
+                        <h3 class="card-title font-weight-bold">{{ posting.job_name }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ posting.employer_name }}</h6>
+                        <p class="card-text">{{ posting.job_description }}</p>
+                        <div class="mt-auto d-flex justify-content-end">
+                            <a href="{{ posting.get_read_more_url }}" class="btn btn-primary mx-1">More Information</a>
+                            <a href="{{ posting.get_apply_url }}" class="btn btn-primary">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+    
+{% endblock %}

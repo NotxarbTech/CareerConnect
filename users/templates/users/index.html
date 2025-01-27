@@ -1,0 +1,25 @@
+{%  extends "layout.html" %}
+
+{% block title %}
+    Employers
+{%  endblock %}
+
+{% block body-class %} index-page {% endblock %}
+
+{% block content %}
+    <div class="d-flex flex-column overflow-hidden">
+        {% load static %}
+        <div class="bg-image" style="background-image: url({% static 'images/background_image.jpg' %}); height: 100vh; background-size: cover; background-position: center center;">
+            <div class="text-center h-75 d-flex flex-column justify-content-center align-items-center text-white landing-text">
+                <h1 class="mb-2">CareerConnect</h1>
+                <h5 class="mb-3">Albertville High School</h3>
+                <p class="lead">Connecting students with jobs easily and efficiently.</p>
+                <div class="d-inline">
+                    <a href="{% url 'students:index' %}" class="btn btn-lg btn-primary">For students</a> 
+                    <a href="{% url 'employers:index' %}" class="btn btn-lg btn-primary">For employers</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
