@@ -14,6 +14,11 @@ class LoginView(LoginView):
     redirect_authenticated_user = False
 
     def get_success_url(self):
+        # Check if the user searched for anything before logging in, and if so display the results
+        search_query = self.request.session.pop('search_query', None)
+        if search_query:
+            return f'{reverse_lazy('students:search_results')}?q={search_query}'
+
         return reverse_lazy('users:index')
     
     def form_invalid(self, form):

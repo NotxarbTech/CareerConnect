@@ -27,9 +27,9 @@
                 <a class="nav-link" href="{% url 'employers:index' %}">Employers</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button type="sumbit" id="search-icon" class="btn p-0">
+            <form class="d-flex" action="{% url 'students:search_results' %}" method="get">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="q" value="{{ request.GET.q|default:'' }}" autocomplete="off">
+              <button type="submit" id="search-icon" class="btn p-0">
                 <img src="{% static 'images/search_icon.png '%}" alt="Search Icon" class="img-fluid">
               </button>
             </form>
